@@ -15,7 +15,7 @@ def get_todo_list(request):
 
 def add_item(request):
     if request.method == "POST":
-        form = ItemForm(request)
+        form = ItemForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('get_todo_list')
